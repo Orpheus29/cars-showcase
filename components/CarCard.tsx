@@ -16,12 +16,7 @@ interface CarCardProps {
 const CarCard = ({ car }: CarCardProps) => {
   const {
     city_mpg,
-    combination_mpg,
-    cylinders,
-    displacement,
     drive,
-    fuel_type,
-    highway_mpg,
     make,
     model,
     transmission,
@@ -36,7 +31,7 @@ const CarCard = ({ car }: CarCardProps) => {
     <div className='car-card group'>
       <div className='car-card__content'>
         <h2 className='car-card__content-title'>
-          {make} {model}
+          {make === 'bmw' || make === 'gmc' || make === 'mini' ? make.toUpperCase() : make} {model}
         </h2>
       </div>
       <p className='flex mt-6 text-[32px] font-extrabold'>

@@ -16,6 +16,8 @@ interface CarDetailsProps {
 }
 
 const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
+  const { make, model } = car;
+
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -63,7 +65,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                   <div className='flex-1 flex flex-col gap-3'>
                     <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
                       <Image
-                        src={generateCarImageUrl(car,)}
+                        src={generateCarImageUrl(car)}
                         className='object-contain'
                         alt='car model'
                         fill
@@ -105,14 +107,22 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                   </div>
                   <div className='flex-1 flex flex-col gap-2'>
                     <h2 className='font-semibold text-xl capitalize'>
-                      {car.make} {car.model}
+                      {make === 'bmw' || make === 'gmc' || make === 'mini' ? make.toUpperCase() : make} {model}
                     </h2>
 
                     <div className='mt-3 flex flex-wrap gap-4'>
                       {Object.entries(car).map(([key, value]) => (
                         <div className='flex justify-between gap-5 w-full text-right' key={key}>
-                          <h4 className='text-grey capitalize'>{key.split('_').join(' ')}</h4>
-                          <p className='text-black-100 font-semibold'>{value}</p>
+                          <h4 className='text-grey capitalize'>
+                            {key.split('_').map((part) => part === 'mpg' ? 'MPG' : part).join(' ')}
+                          </h4>
+
+                          <p className='text-black-100 font-semibold capitalize'>
+                            {key === 'drive'
+                              ? value.toUpperCase()
+                              : (value === 'bmw' || value === 'gmc' || value === 'mini' ? value.toUpperCase() : value)
+                            }
+                          </p>
                         </div>
                       ))}
                     </div>
