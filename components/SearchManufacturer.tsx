@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Fragment } from 'react';
+import { useState, Fragment, useEffect } from 'react';
 
 import { Combobox, Transition } from '@headlessui/react';
 
@@ -11,6 +11,7 @@ import { SearchManufacturerProps } from '@/types';
 
 const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacturerProps) => {
   const [query, setQuery] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
 
   const filteredManufacturers =
     query === ''
@@ -39,12 +40,14 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
             />
           </Combobox.Button>
 
-          <Combobox.Input
-            className='search-manufacturer__input'
-            placeholder='Volkswagen'
-            displayValue={(manufacturer: string) => manufacturer}
-            onChange={(e) => setQuery(e.target.value)}
-          />
+          <Combobox.Button as='div'>
+            <Combobox.Input
+              className='search-manufacturer__input'
+              placeholder='Volkswagen'
+              displayValue={(manufacturer: string) => manufacturer}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </Combobox.Button>
 
           <Transition
             as={Fragment}
@@ -54,7 +57,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
             afterLeave={() => setQuery('')}
           >
             <Combobox.Options
-              className='absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1
+              className='absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 z-10
               text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'
               static
             >
@@ -107,4 +110,4 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
   )
 }
 
-export default SearchManufacturer
+export default SearchManufacturer;

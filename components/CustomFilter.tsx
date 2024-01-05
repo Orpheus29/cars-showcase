@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 import { Listbox, Transition } from "@headlessui/react";
 
-import { updateSearchParams } from '@/utils';
+import { updateFilterParams } from '@/utils';
 
 import { CustomFilterProps } from '@/types';
 
@@ -17,7 +17,7 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
 
   const handleUpdateParams = (e: { title: string, value: string }) => {
-    const newPathName = updateSearchParams(title, e.value.toLowerCase());
+    const newPathName = updateFilterParams(title, e.value.toLowerCase());
 
     router.push(newPathName, { scroll: false });
   }

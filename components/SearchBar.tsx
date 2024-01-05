@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { SearchManufacturer } from '.';
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
-  <button type='submit' className={`-ml-3 z-10 ${otherClasses}`}>
+  <button type='submit' className={`-ml-3 ${otherClasses}`}>
     <Image
       src='/magnifying-glass.svg'
       alt='magnifying glass'
@@ -66,7 +66,7 @@ const SearchBar = () => {
           setManufacturer={setManufacturer}
         />
 
-        <SearchButton otherClasses='sm:hidden' />
+        <SearchButton otherClasses='sm:hidden z-10' />
       </div>
 
       <div className='searchbar__item'>
@@ -90,7 +90,7 @@ const SearchBar = () => {
         <SearchButton otherClasses='sm:hidden' />
       </div>
 
-      <SearchButton otherClasses='max-sm:hidden' />
+      <SearchButton otherClasses='max-sm:hidden z-10' />
     </form>
   )
 };
