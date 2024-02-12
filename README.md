@@ -1,36 +1,55 @@
+<h1 align="center">🏎️💨🔥Cars Showcase🔥🚘🚗</h1>
+
+<p align="center">
+    <sup>Look at the beautiful cars they produce these days!</sup>
+</p>
+
+<p align="center">
+  <a href="https://cars-showcase-dun.vercel.app/">
+    <strong>✨GO TO✨</strong>
+  </a>
+</p>
+
+
+<h2 align="center">📋About📋</h2>
+This is AutoVerse! A Cars Showcase web project developed using React, NextJS 13, Typescript, Tailwind CSS, and Headless UI.
+
+The website aims to provide an immersive experience for users interested in exploring various car models.
+
+<h3><span style="color: red">Features:</span></h3>
+
+**Hero Section:** The website features a visually stunning hero section that immediately grabs the attention of visitors, showcasing the most captivating cars in a captivating manner.
+
+**Car Catalogue:** The project includes a comprehensive car catalogue where users can browse through a wide range of car models. The catalogue allows users to filter cars based on various criteria, including maker, model, fuel type, and year.
+
+**Filtering Functionality:** Users can conveniently filter the car catalogue by selecting specific options for makers, models, fuel types, and years. This enables them to narrow down their search and find the exact car they are looking for.
+
+**Car Details:** Clicking on a car card in the catalogue provides users with more detailed information about the selected car. Users can explore the manufacturer's details and view pictures of the car from different angles, gaining a comprehensive understanding of its design and features.
+
+
+<h2 align="center">🧙‍♂️Technologies used🧙‍♂️</h2>
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Next](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Headless UI](https://img.shields.io/static/v1?style=for-the-badge&message=Headless+UI&color=222222&logo=Headless+UI&logoColor=66E3FF&label=)
+
+
+<h2 align="center">📌Running your application locally📌</h2>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Feel free to explore the code, make improvements, and contribute to the project.
 
-First, run the development server:
+To get started:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Clone the repository to your local machine:
+```
+git clone https://github.com/Orpheus29/cars-showcase.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Install the necessary dependencies using:
+```
+npm install
+```
+3. Launch the project using:
+```
+npm start
+```
