@@ -51,11 +51,11 @@ git clone https://github.com/Orpheus29/cars-showcase.git
 ```
 npm install
 ```
-3. Launch the project using:
+3. Launch the project with hot reload using:
 ```
-npm start
+npm run dev
 ```
-JFI: Carimage testlink template:
+JFI: Car image test link template:
 ```
 https://cdn.imagin.studio/getimage?customer=hrjavascript-mastery&make=audi&modelFamily=rs5&modelYear=2022&angle=1
 ```
