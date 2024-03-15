@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: { searchParams: FilterProps
       <Hero />
 
       <div
-        className='mt-8 padding-x padding-y max-width'
+        className='mt-7 padding-x padding-y max-width'
         id='discover'
       >
         <div className='home__text-container'>
