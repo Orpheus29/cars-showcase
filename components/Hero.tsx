@@ -33,7 +33,7 @@ const Hero = () => {
       <div className='hero__image-container'>
         <div className='hero__image'>
           <Image
-            src='/new-hero-b&w.png'
+            src='/new-hero-bw.png'
             alt='hero'
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
