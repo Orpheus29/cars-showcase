@@ -7,7 +7,7 @@ import { FilterProps } from '@/types';
 export default async function Home({ searchParams }: { searchParams: FilterProps }) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || '',
-    year: searchParams.year || 2022,
+    year: searchParams.year || 2023,
     fuel: searchParams.fuel || '',
     limit: searchParams.limit || 12,
     model: searchParams.model || '',
@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: { searchParams: FilterProps
       <Hero />
 
       <div
-        className='mt-12 padding-x padding-y max-width'
+        className='mt-8 padding-x padding-y max-width'
         id='discover'
       >
         <div className='home__text-container'>
@@ -42,8 +42,8 @@ export default async function Home({ searchParams }: { searchParams: FilterProps
           ? (
             <section>
               <div className='home__cars-wrapper'>
-                {allCars?.map((car) => (
-                  <CarCard car={car} />
+                {allCars?.map((car, index) => (
+                  <CarCard key={index} car={car} />
                 ))}
               </div>
 

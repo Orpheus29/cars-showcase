@@ -60,6 +60,21 @@ export async function fetchCars(filters: FilterProps) {
 
   const result = await response.json();
 
+  if (manufacturer === 'audi' || manufacturer === 'tesla') {
+    const rsCars = result.filter(
+      (car: CarProps) =>
+        car.model.startsWith('rs') || car.model.startsWith('model')
+    );
+    console.log(rsCars);
+    rsCars.forEach((rsCar: CarProps) => {
+      const rsCarIndex = result.findIndex(() => rsCar);
+      const words = rsCar.model.split(' ');
+
+      rsCar.model = `${words[0]}-${words[1]} ${words.slice(2).join(' ')}`;
+      result[rsCarIndex] = rsCar;
+    });
+  }
+
   return result;
 }
 
@@ -69,7 +84,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   url.searchParams.append('customer', 'hrjavascript-mastery');
   url.searchParams.append('make', make);
-  url.searchParams.append('modelFamily', model.split(' ')[0]);
+  url.searchParams.append('modelFamily', `${model.split(' ')[0]}`);
   url.searchParams.append('zoomType', 'fullscreen');
   url.searchParams.append('modelYear', `${year}`);
   // url.searchParams.append('zoomLevel', zoomLevel);

@@ -16,6 +16,8 @@ This is AutoVerse! A Cars Showcase web project developed using React, NextJS 13,
 
 The website aims to provide an immersive experience for users interested in exploring various car models.
 
+This page lets you browse a car catalogue provided by the "Cars by API-Ninjas" API from RapidAPI. The project is based on a tutorial from [Javascript Mastery](https://www.youtube.com/@javascriptmastery).
+
 <h3><span style="color: red">Features:</span></h3>
 
 **Hero Section:** The website features a visually stunning hero section that immediately grabs the attention of visitors, showcasing the most captivating cars in a captivating manner.
@@ -52,4 +54,8 @@ npm install
 3. Launch the project using:
 ```
 npm start
+```
+JFI: Carimage testlink template:
+```
+https://cdn.imagin.studio/getimage?customer=hrjavascript-mastery&make=audi&modelFamily=rs5&modelYear=2022&angle=1
 ```

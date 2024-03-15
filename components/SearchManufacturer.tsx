@@ -51,13 +51,16 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
 
           <Transition
             as={Fragment}
-            leave='transition ease-in duration-100'
+            enter='transition ease-out duration-200'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='transition ease-in duration-200'
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
             afterLeave={() => setQuery('')}
           >
             <Combobox.Options
-              className='absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 z-10
+              className='absolute mt-1 max-h-60 w-full ml-5 overflow-auto rounded-md bg-white py-1 z-10
               text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'
               static
             >

@@ -65,11 +65,12 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                   <div className='flex-1 flex flex-col gap-3'>
                     <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
                       <Image
-                        src={generateCarImageUrl(car)}
+                        src={generateCarImageUrl(car, '1')}
                         className='object-contain'
                         alt='car model'
                         fill
                         priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       />
                     </div>
 
@@ -81,6 +82,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                           alt='car model'
                           fill
                           priority
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                         />
                       </div>
 
@@ -91,6 +93,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                           alt='car model'
                           fill
                           priority
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                         />
                       </div>
 
@@ -101,6 +104,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                           alt='car model'
                           fill
                           priority
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                         />
                       </div>
                     </div>

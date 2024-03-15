@@ -48,7 +48,10 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
 
           <Transition
             as={Fragment}
-            leave='transition ease-in duration-100'
+            enter='transition ease-out duration-200'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='transition ease-in duration-200'
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >

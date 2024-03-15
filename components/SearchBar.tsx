@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
@@ -52,8 +52,12 @@ const SearchBar = () => {
 
     const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
 
-    router.push(newPathName, {scroll: false});
+    router.push(newPathName, { scroll: false });
   }
+
+  useEffect(() => {
+    updateSearchParams(manufacturer, model);
+  }, [manufacturer])
 
   return (
     <form
