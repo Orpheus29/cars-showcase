@@ -12,7 +12,8 @@ export default async function Home({ searchParams }: { searchParams: FilterProps
     limit: searchParams.limit || 12,
     model: searchParams.model || '',
   });
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
+  const isDataEmpty = !Array.isArray(allCars) || !allCars.length || !allCars;
 
   return (
     <main className="overflow-hidden">

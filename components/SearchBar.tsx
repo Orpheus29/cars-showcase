@@ -56,7 +56,7 @@ const SearchBar = () => {
   }
 
   useEffect(() => {
-    updateSearchParams(manufacturer, model);
+    updateSearchParams(manufacturer.toLowerCase(), model);
   }, [manufacturer])
 
   return (
