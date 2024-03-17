@@ -53,7 +53,7 @@ npm install
 ```
 3. Launch the project with hot reload using:
 ```
-npm run dev
+npm start
 ```
 JFI: Car image test link template:
 ```

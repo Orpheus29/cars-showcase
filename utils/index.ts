@@ -60,12 +60,17 @@ export async function fetchCars(filters: FilterProps) {
 
   const result = await response.json();
 
-  if (manufacturer === 'audi' || manufacturer === 'tesla') {
+  if (
+    manufacturer === 'audi' ||
+    manufacturer === 'tesla' ||
+    manufacturer === 'jeep'
+  ) {
     const rsCars = result.filter(
       (car: CarProps) =>
-        car.model.startsWith('rs') || car.model.startsWith('model')
+        car.model.startsWith('rs') ||
+        car.model.startsWith('model') ||
+        car.model.startsWith('grand')
     );
-    console.log(rsCars);
     rsCars.forEach((rsCar: CarProps) => {
       const rsCarIndex = result.findIndex(() => rsCar);
       const words = rsCar.model.split(' ');
@@ -73,12 +78,15 @@ export async function fetchCars(filters: FilterProps) {
       rsCar.model = `${words[0]}-${words[1]} ${words.slice(2).join(' ')}`;
       result[rsCarIndex] = rsCar;
     });
+  } else if (manufacturer === 'mclaren') {
+    result.forEach((mclaren: CarProps) => {
+      mclaren.make = 'McLaren Automotive';
+    });
   }
-
   return result;
 }
 
-export const generateCarImageUrl = (car: CarProps, angle?: string) => {
+export const generateCarImageUrl = (car: CarProps, angle: string) => {
   const url = new URL('https://cdn.imagin.studio/getimage');
   const { make, model, year } = car;
 

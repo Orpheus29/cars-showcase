@@ -46,6 +46,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
               placeholder='Volkswagen'
               displayValue={(manufacturer: string) => manufacturer}
               onChange={(e) => setQuery(e.target.value)}
+              autoComplete='off'
             />
           </Combobox.Button>
 
